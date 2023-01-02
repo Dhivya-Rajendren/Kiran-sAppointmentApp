@@ -1,0 +1,31 @@
+﻿@page
+@model Kiran_sAppointmentApp.Pages.PatientsListModel
+@{
+}
+
+
+<p class="alert alert-primary">@ViewData["PageTitle"]</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Patient Name
+        </th>
+        <th>
+            Contact
+        </th>
+        <th>
+
+Patient History</th>
+    </tr>
+
+
+    @foreach(var item in Model.Patients)
+    {
+        <tr>
+            <td>@item.PatientName</td>
+            <td>@item.Contact</td>
+            <td>@item.PatientHistory</td>
+        </tr>
+    }
+</table>
