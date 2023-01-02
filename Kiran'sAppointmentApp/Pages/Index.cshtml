@@ -1,0 +1,17 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="mt-4 p-5 bg-info text-white rounded">
+  <h1>Welcome To Kiran's Appointment booking App </h1>
+  <h3>@ViewData["SubTitle"]</h3>
+  <p> This App has a ablity to get the details of Patients, Doctors. Helps to make a appointment for a patient with a doctor</p>
+ <p>Visit Time : @DateTime.Now.ToShortDateString()</p>
+
+ @foreach(string item in Model.Doctors)
+ {
+     <p>@item</p>
+ }
+</div>
