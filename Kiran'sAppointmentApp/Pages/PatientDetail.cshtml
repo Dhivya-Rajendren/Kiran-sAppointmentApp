@@ -1,0 +1,17 @@
+﻿@page
+@model Kiran_sAppointmentApp.Pages.PatientDetailModel
+@{
+}
+
+<div class="card col-sm-4">
+    <div class="card-header">
+        @Model._Patient.PatientName
+    </div>
+    <div class="card-body">
+        <img src="/images/PersonM.jpg"/>
+        <p>@Model._Patient.Email</p>
+        <p>@Model._Patient.Contact</p>
+        <p>@Model._Patient.PatientHistory</p>
+    </div>
+
+</div>

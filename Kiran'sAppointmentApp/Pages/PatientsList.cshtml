@@ -17,6 +17,9 @@
         <th>
 
 Patient History</th>
+<th>
+    Action
+</th>
     </tr>
 
 
@@ -26,6 +29,8 @@ Patient History</th>
             <td>@item.PatientName</td>
             <td>@item.Contact</td>
             <td>@item.PatientHistory</td>
+            <td>
+                <a asp-page="PatientDetail" asp-route-patientId=@item.PatientId>Details</a>  </td>
         </tr>
     }
 </table>

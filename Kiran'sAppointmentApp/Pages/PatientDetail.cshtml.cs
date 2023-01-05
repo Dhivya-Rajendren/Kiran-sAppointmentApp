@@ -4,11 +4,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Kiran_sAppointmentApp.Pages
 {
-    public class PatientsListModel : PageModel
+    public class PatientDetailModel : PageModel
     {
         public List<Patient> Patients { get; set; }
 
-        public PatientsListModel()
+        public Patient _Patient { get; set; }
+
+        public PatientDetailModel()
         {
             Patients = new List<Patient>()
             {
@@ -18,12 +20,9 @@ namespace Kiran_sAppointmentApp.Pages
             };
         }
 
-        /// <summary>
-        /// Handles the incoming Get request
-        /// </summary>
-        public void OnGet()
+        public void OnGet(int patientId)
         {
-            ViewData["PageTitle"] = "List of Patients";
+            _Patient = Patients.Find(p => p.PatientId == patientId);
         }
     }
 }
