@@ -4,15 +4,16 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Kiran_sAppointmentApp.Pages
 {
-    public class PatientDetailModel : PageModel
+    public class DeleteConfirmModel : PageModel
     {
         AppointmentRepository repo = new AppointmentRepository();
 
-        public Patient _Patient { get; set; }
-
-        public void OnGet(int patientId)
+        public IActionResult OnGet(int patientId)
         {
-            _Patient = repo.GetPatient(patientId);
+            repo.DeletePatient(patientId);
+
+         return   RedirectToPage("PatientsList");
+
         }
     }
 }

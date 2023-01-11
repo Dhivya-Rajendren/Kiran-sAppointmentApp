@@ -1,7 +1,8 @@
 ﻿@page
-@model Kiran_sAppointmentApp.Pages.PatientDetailModel
+@model Kiran_sAppointmentApp.Pages.DeletePatientModel
 @{
 }
+
 
 <div class="card col-sm-4">
     <div class="card-header">
@@ -14,7 +15,11 @@
         <p>@Model._Patient.PatientHistory</p>
     </div>
     <div class="card-footer">
-        <a asp-page="PatientsList"  class="btn btn-primary">Back To List</a>
+        <p>Are you confirm to delete the Patient ?
+
+<a asp-page="DeleteConfirm" asp-route-patientId=@Model._Patient.PatientId class="btn btn-primary btn-sm">Yes</a>
+<a asp-page="PatientsList" class="btn btn-danger btn-sm">No</a>
+        </p>
     </div>
 
 </div>

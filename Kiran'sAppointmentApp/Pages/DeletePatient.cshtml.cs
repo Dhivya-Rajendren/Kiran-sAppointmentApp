@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Kiran_sAppointmentApp.Pages
 {
-    public class PatientDetailModel : PageModel
+    public class DeletePatientModel : PageModel
     {
         AppointmentRepository repo = new AppointmentRepository();
 

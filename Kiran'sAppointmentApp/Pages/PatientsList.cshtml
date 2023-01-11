@@ -4,7 +4,13 @@
 }
 
 
-<p class="alert alert-primary">@ViewData["PageTitle"]</p>
+<p class="alert alert-primary">@ViewData["PageTitle"]   </p>
+
+<br/>
+
+<a asp-page="NewPatient" class="btn btn-info">New Patient</a>
+
+<br/>
 
 <table class="table table-bordered">
     <tr>
@@ -20,6 +26,12 @@ Patient History</th>
 <th>
     Action
 </th>
+<th>
+    Action
+</th>
+<th>
+    Action
+</th>
     </tr>
 
 
@@ -30,7 +42,13 @@ Patient History</th>
             <td>@item.Contact</td>
             <td>@item.PatientHistory</td>
             <td>
-                <a asp-page="PatientDetail" asp-route-patientId=@item.PatientId>Details</a>  </td>
-        </tr>
+                <a asp-page="PatientDetail" asp-route-patientId=@item.PatientId  class="btn btn-secondary">Details</a>  </td>
+        
+             <td>
+                <a asp-page="PatientDetail" asp-route-patientId=@item.PatientId  class="btn btn-primary">Edit</a>  </td>
+         <td>
+                <a asp-page="DeletePatient" asp-route-patientId=@item.PatientId  class="btn btn-danger">Delete</a>  </td>
+        
+            </tr>
     }
 </table>
