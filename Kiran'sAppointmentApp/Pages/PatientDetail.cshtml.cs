@@ -6,7 +6,8 @@ namespace Kiran_sAppointmentApp.Pages
 {
     public class PatientDetailModel : PageModel
     {
-        AppointmentRepository repo = new AppointmentRepository();
+        //     AppointmentRepository repo = new AppointmentRepository();
+        DBHelper repo = new DBHelper();
 
         public Patient _Patient { get; set; }
 

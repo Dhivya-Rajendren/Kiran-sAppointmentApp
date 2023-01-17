@@ -4,23 +4,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Kiran_sAppointmentApp.Pages
 {
-    public class NewPatientModel : PageModel
+    public class UpdatePatientModel : PageModel
     {
-        //  AppointmentRepository repo = new AppointmentRepository();
+        // AppointmentRepository repo = new AppointmentRepository();
 
         DBHelper repo = new DBHelper();
-
         [BindProperty]
-        public Patient NewPatient { get; set; }
-        public void OnGet()
+        public Patient UpdatePatient { get; set; }
+        public void OnGet(int patientId)
         {
-
-           
+            UpdatePatient = repo.GetPatient(patientId);
         }
 
         public IActionResult OnPost()
         {
-            repo.AddNewPatient(NewPatient);
+            repo.EditPatient(UpdatePatient.PatientId, UpdatePatient.PatientHistory);
             return RedirectToPage("PatientsList");
         }
     }

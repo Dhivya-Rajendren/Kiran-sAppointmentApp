@@ -22,7 +22,14 @@
 
         public void EditPatient(int patientId, string patientHistory)
         {
-            throw new NotImplementedException();
+            foreach (var item in Patients)
+            {
+                if (item.PatientId==patientId)
+                {
+                    item.PatientHistory = patientHistory;
+                }
+            }
+
         }
 
         public List<Patient> GetAllPatients()

@@ -3,16 +3,9 @@
 @{
 }
 
-<div class="card col-sm-4">
-    <div class="card-header">
-        @Model._Patient.PatientName
-    </div>
-    <div class="card-body">
-        <img src="/images/PersonM.jpg"/>
-        <p>@Model._Patient.Email</p>
-        <p>@Model._Patient.Contact</p>
-        <p>@Model._Patient.PatientHistory</p>
-    </div>
+
+@await Component.InvokeAsync("PatientDetail", new {patientID=Model._Patient.PatientId})
+
     <div class="card-footer">
         <a asp-page="PatientsList"  class="btn btn-primary">Back To List</a>
     </div>

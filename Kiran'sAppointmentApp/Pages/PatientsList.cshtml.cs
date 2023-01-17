@@ -8,7 +8,17 @@ namespace Kiran_sAppointmentApp.Pages
     {
         public List<Patient> Patients { get; set; }
 
-        AppointmentRepository repo = new AppointmentRepository();
+        //       AppointmentRepository repo = new AppointmentRepository();
+         private readonly IConfiguration config;
+      
+        public PatientsListModel(IConfiguration config)
+        {
+            repo = new DBHelper();
+
+        }
+
+        DBHelper repo;
+     
 
 
         /// <summary>

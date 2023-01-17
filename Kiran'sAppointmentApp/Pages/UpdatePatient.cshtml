@@ -1,0 +1,31 @@
+﻿@page
+@model Kiran_sAppointmentApp.Pages.UpdatePatientModel
+@{
+}
+
+<form method="post">
+  <div class="form-group">
+      <input type="hidden" asp-for=UpdatePatient.PatientId/>
+    <label >Patient Name</label>
+    <input asp-for=UpdatePatient.PatientName  class="form-control w-25"  placeholder="Enter Name">
+  </div>
+
+  <div class="form-group">
+    <label>Contact </label>
+    <input   asp-for=UpdatePatient.Contact   class="form-control w-25"  placeholder="Enter Contact">
+  </div>
+
+
+   <div class="form-group">
+    <label >Patient Email</label>
+    <input    asp-for=UpdatePatient.Email  class="form-control w-25"  placeholder="Enter Email">
+  </div>
+
+
+  <div class="form-group">
+    <label>Patient History </label>
+    <input   asp-for=UpdatePatient.PatientHistory  class="form-control w-25"  placeholder="Patient History">
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-primary">Update Details</button>
+</form>
